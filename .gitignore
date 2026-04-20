@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environments
+terra_mars_env/
+venv/
+.venv/
+
+# Model weights (TOO BIG for GitHub)
+output/
+*.safetensors
+*.bin
+*.pt
+*.pth
+
+# Large data files
+mars_training_data.jsonl
+all_chunks.jsonl
+
+# Generated results
+montecarlo_results.json
+intervention_results.json
+multihop_results.json
+results.csv
+
+# Secrets
+.env
+HF_TOKEN
+*.token
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Duplicate file
+requirement.txt
