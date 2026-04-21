@@ -56,7 +56,7 @@ with st.sidebar:
 
 # ── Main tabs ─────────────────────────────────────────────────────────────────
 tab1, tab2, tab3, tab4, tab5 = st.tabs([
-    "🤖 Mars Mind Chat",
+    "🤖 TerraMARS Mind Chat",
     "📊 Extract Constraints",
     "📈 Monte Carlo Simulation",
     "⚙️ Intervention Analysis",
@@ -67,20 +67,20 @@ tab1, tab2, tab3, tab4, tab5 = st.tabs([
 # TAB 1: Chat
 # ─────────────────────────────────────────────────────────────────────────────
 with tab1:
-    st.subheader("🤖 Mars Mind")
+    st.subheader("🤖 TerraMARS Mind")
     st.markdown("Chat with our AI assistant backed by Mars science literature.")
 
     if "messages" not in st.session_state:
         st.session_state.messages = [
             {"role": "assistant", 
-             "content": "Hello! I am Mars Mind 🔴. Ask me anything about Mars terraforming, pioneer organisms, or habitability conditions!"}
+             "content": "Hello! I am TerraMARS Mind 🔴. Ask me anything about Mars terraforming, pioneer organisms, or habitability conditions!"}
         ]
 
     for msg in st.session_state.messages:
         with st.chat_message(msg["role"], avatar="🔴" if msg["role"] == "assistant" else None):
             st.write(msg["content"])
 
-    if prompt := st.chat_input("Ask Mars Mind anything..."):
+    if prompt := st.chat_input("Ask TerraMARS Mind..."):
         st.session_state.messages.append({"role": "user", "content": prompt})
         with st.chat_message("user"):
             st.write(prompt)
@@ -99,7 +99,7 @@ with tab1:
 
     if st.button("🗑️ Clear Chat"):
         st.session_state.messages = [{"role": "assistant",
-            "content": "Hello! Ask me anything!"}]
+            "content": "Hello! Ask me!"}]
         st.rerun()
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -424,8 +424,8 @@ with tab5:
     2. **Synthetic Data Generation** — 1,540 training examples via Llama 3.2 + Ollama
     3. **Fine-tuning** — Gemma 3 1B with QLoRA (r=16, α=32)
     4. **RAG** — FAISS vector search with MiniLM embeddings
-    5. **Monte Carlo** — 1,000 trajectory simulations for stage prediction
-    6. **Intervention Engine** — Strategy comparison across 5 scenarios
+    5. **Monte Carlo** — Real-time user-driven trajectory simulations
+    6. **Intervention Engine** —  Custom strategy builder with live comparison
     
     ### Technical Stack
     
